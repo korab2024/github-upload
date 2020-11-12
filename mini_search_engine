@@ -1,0 +1,36 @@
+# create a dictionary manually
+course_room = {'CIS101':'3004','CIS102':'4501','CIS103':'6755','NT110':'1244','CM241':'1411'}
+
+
+# lsits to be converted to dictionary, to make the search possible/easy
+course_num = ['CIS101', 'CIS102','CIS103','NT110', 'CM241']
+instructor = ['Haynes','Alvarado','Rich','Burke','Lee']
+meet_times = ['8:00AM','9:00AM','10:00AM','11:00AM','1:00PM']
+
+# empty dictionaries to be used later
+course_inst={}
+course_time_dict ={}
+
+# for loop to iterate and add key:values int othe respective dictionaries
+for key in course_num:
+    for value in instructor:
+        course_inst[key]= value
+        instructor.remove(value)
+        break
+print(course_inst)
+
+for key in course_num:
+    for value in meet_times:
+        course_time_dict[key]=value
+        meet_times.remove(value)
+        break
+        
+print(course_time_dict)
+
+print("This program helps user to search/find using a course code, Room number, instructor and meeting time")
+answer = input("Enter a course number: ")
+
+room_number = course_room[answer]
+instr_name = course_inst[answer]
+meet_timeZ = course_time_dict[answer]
+print("Course: ",answer, ", Room number: ", room_number, ", Instructor: ", instr_name, ", Meeting time: ", meet_timeZ)
